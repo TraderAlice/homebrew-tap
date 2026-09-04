@@ -8,13 +8,13 @@ require "time"
 class Openalice < Formula
   desc "Local trading workspace for native coding-agent CLIs"
   homepage "https://openalice.ai"
-  version "0.90.2"
+  version "0.91.0"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TraderAlice/OpenAlice/releases/download/v0.90.2/openalice-cli-0.90.2-darwin-arm64.tar.gz"
-      sha256 "f96085c33997cbb90078870daf8fa3e8ede68a583c0e3c44e9d8e685a53401de"
+      url "https://github.com/TraderAlice/OpenAlice/releases/download/v0.91.0/openalice-cli-0.91.0-darwin-arm64.tar.gz"
+      sha256 "3078aeeacff7dc2ccf3c039bd18c2b5485b9795566bf8399d208e6c9daf2a717"
 
       def install
         release = buildpath
@@ -24,7 +24,7 @@ class Openalice < Formula
         prefix.install release/"release.json"
         (share/"openalice/release.json").write(release_metadata)
         prefix.install release/"THIRD_PARTY_NOTICES.md"
-        metadata = JSON.parse("{\"schemaVersion\":3,\"repository\":\"TraderAlice/OpenAlice\",\"cliVersion\":\"0.90.2\",\"selector\":{\"kind\":\"version\",\"value\":\"v0.90.2\"},\"installerUrl\":\"https://github.com/TraderAlice/homebrew-tap\",\"updateChannel\":\"stable\",\"method\":\"brew\",\"artifact\":{\"platform\":\"darwin\",\"arch\":\"arm64\",\"sha256\":\"f96085c33997cbb90078870daf8fa3e8ede68a583c0e3c44e9d8e685a53401de\"}}")
+        metadata = JSON.parse("{\"schemaVersion\":3,\"repository\":\"TraderAlice/OpenAlice\",\"cliVersion\":\"0.91.0\",\"selector\":{\"kind\":\"version\",\"value\":\"v0.91.0\"},\"installerUrl\":\"https://github.com/TraderAlice/homebrew-tap\",\"updateChannel\":\"stable\",\"method\":\"brew\",\"artifact\":{\"platform\":\"darwin\",\"arch\":\"arm64\",\"sha256\":\"3078aeeacff7dc2ccf3c039bd18c2b5485b9795566bf8399d208e6c9daf2a717\"}}")
         metadata["installedAt"] = Time.now.utc.iso8601
         content = JSON.pretty_generate(metadata) + "\n"
         (prefix/"install-source.json").write(content)
@@ -35,8 +35,8 @@ class Openalice < Formula
 
   on_macos do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TraderAlice/OpenAlice/releases/download/v0.90.2/openalice-cli-0.90.2-darwin-x64.tar.gz"
-      sha256 "2f82b345882c271ede90d9c135f61db1309084b44c78f5ff63ac2fad796be22e"
+      url "https://github.com/TraderAlice/OpenAlice/releases/download/v0.91.0/openalice-cli-0.91.0-darwin-x64.tar.gz"
+      sha256 "fcc3a5db194260f77dd60241ed2fad6573da982663294707ea70d6e226b43dd6"
 
       def install
         release = buildpath
@@ -46,7 +46,7 @@ class Openalice < Formula
         prefix.install release/"release.json"
         (share/"openalice/release.json").write(release_metadata)
         prefix.install release/"THIRD_PARTY_NOTICES.md"
-        metadata = JSON.parse("{\"schemaVersion\":3,\"repository\":\"TraderAlice/OpenAlice\",\"cliVersion\":\"0.90.2\",\"selector\":{\"kind\":\"version\",\"value\":\"v0.90.2\"},\"installerUrl\":\"https://github.com/TraderAlice/homebrew-tap\",\"updateChannel\":\"stable\",\"method\":\"brew\",\"artifact\":{\"platform\":\"darwin\",\"arch\":\"x64\",\"sha256\":\"2f82b345882c271ede90d9c135f61db1309084b44c78f5ff63ac2fad796be22e\"}}")
+        metadata = JSON.parse("{\"schemaVersion\":3,\"repository\":\"TraderAlice/OpenAlice\",\"cliVersion\":\"0.91.0\",\"selector\":{\"kind\":\"version\",\"value\":\"v0.91.0\"},\"installerUrl\":\"https://github.com/TraderAlice/homebrew-tap\",\"updateChannel\":\"stable\",\"method\":\"brew\",\"artifact\":{\"platform\":\"darwin\",\"arch\":\"x64\",\"sha256\":\"fcc3a5db194260f77dd60241ed2fad6573da982663294707ea70d6e226b43dd6\"}}")
         metadata["installedAt"] = Time.now.utc.iso8601
         content = JSON.pretty_generate(metadata) + "\n"
         (prefix/"install-source.json").write(content)
@@ -57,8 +57,8 @@ class Openalice < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TraderAlice/OpenAlice/releases/download/v0.90.2/openalice-cli-0.90.2-linux-arm64.tar.gz"
-      sha256 "348b4a8765562c6685280a5a125dfdf967af82b88dd229b7873fdcb961fd0e4c"
+      url "https://github.com/TraderAlice/OpenAlice/releases/download/v0.91.0/openalice-cli-0.91.0-linux-arm64.tar.gz"
+      sha256 "eb7a5e193e729f913212640c5330d6141eb624fd973637f75c41e2d187429ca7"
 
       def install
         release = buildpath
@@ -68,7 +68,7 @@ class Openalice < Formula
         prefix.install release/"release.json"
         (share/"openalice/release.json").write(release_metadata)
         prefix.install release/"THIRD_PARTY_NOTICES.md"
-        metadata = JSON.parse("{\"schemaVersion\":3,\"repository\":\"TraderAlice/OpenAlice\",\"cliVersion\":\"0.90.2\",\"selector\":{\"kind\":\"version\",\"value\":\"v0.90.2\"},\"installerUrl\":\"https://github.com/TraderAlice/homebrew-tap\",\"updateChannel\":\"stable\",\"method\":\"brew\",\"artifact\":{\"platform\":\"linux\",\"arch\":\"arm64\",\"sha256\":\"348b4a8765562c6685280a5a125dfdf967af82b88dd229b7873fdcb961fd0e4c\"}}")
+        metadata = JSON.parse("{\"schemaVersion\":3,\"repository\":\"TraderAlice/OpenAlice\",\"cliVersion\":\"0.91.0\",\"selector\":{\"kind\":\"version\",\"value\":\"v0.91.0\"},\"installerUrl\":\"https://github.com/TraderAlice/homebrew-tap\",\"updateChannel\":\"stable\",\"method\":\"brew\",\"artifact\":{\"platform\":\"linux\",\"arch\":\"arm64\",\"sha256\":\"eb7a5e193e729f913212640c5330d6141eb624fd973637f75c41e2d187429ca7\"}}")
         metadata["installedAt"] = Time.now.utc.iso8601
         content = JSON.pretty_generate(metadata) + "\n"
         (prefix/"install-source.json").write(content)
@@ -79,8 +79,8 @@ class Openalice < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TraderAlice/OpenAlice/releases/download/v0.90.2/openalice-cli-0.90.2-linux-x64.tar.gz"
-      sha256 "f3dcdeae7cbb65eab5deb2d528203d9c5248138c546e3580ecc79a839514bd21"
+      url "https://github.com/TraderAlice/OpenAlice/releases/download/v0.91.0/openalice-cli-0.91.0-linux-x64.tar.gz"
+      sha256 "891b4f093f58028ce14dbed0fe3ffb88a4e2661bddb89c91d7b20db214038e11"
 
       def install
         release = buildpath
@@ -90,7 +90,7 @@ class Openalice < Formula
         prefix.install release/"release.json"
         (share/"openalice/release.json").write(release_metadata)
         prefix.install release/"THIRD_PARTY_NOTICES.md"
-        metadata = JSON.parse("{\"schemaVersion\":3,\"repository\":\"TraderAlice/OpenAlice\",\"cliVersion\":\"0.90.2\",\"selector\":{\"kind\":\"version\",\"value\":\"v0.90.2\"},\"installerUrl\":\"https://github.com/TraderAlice/homebrew-tap\",\"updateChannel\":\"stable\",\"method\":\"brew\",\"artifact\":{\"platform\":\"linux\",\"arch\":\"x64\",\"sha256\":\"f3dcdeae7cbb65eab5deb2d528203d9c5248138c546e3580ecc79a839514bd21\"}}")
+        metadata = JSON.parse("{\"schemaVersion\":3,\"repository\":\"TraderAlice/OpenAlice\",\"cliVersion\":\"0.91.0\",\"selector\":{\"kind\":\"version\",\"value\":\"v0.91.0\"},\"installerUrl\":\"https://github.com/TraderAlice/homebrew-tap\",\"updateChannel\":\"stable\",\"method\":\"brew\",\"artifact\":{\"platform\":\"linux\",\"arch\":\"x64\",\"sha256\":\"891b4f093f58028ce14dbed0fe3ffb88a4e2661bddb89c91d7b20db214038e11\"}}")
         metadata["installedAt"] = Time.now.utc.iso8601
         content = JSON.pretty_generate(metadata) + "\n"
         (prefix/"install-source.json").write(content)
