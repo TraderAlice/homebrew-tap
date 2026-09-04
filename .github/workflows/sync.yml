@@ -1,0 +1,36 @@
+name: Sync stable formula
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stable-formula
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - run: node --test scripts/sync.test.mjs
+      - name: Verify public stable release and update formula
+        run: node scripts/sync.mjs --write
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Commit only a changed formula
+        run: |
+          git add Formula/openalice.rb
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Update OpenAlice stable formula'
+          git push origin HEAD:main
